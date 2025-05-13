@@ -124,7 +124,7 @@ Given model predictions $\hat{y} = [\sin(\hat{\theta}), \cos(\hat{\theta})]$
 And true labels $y = [\sin(\theta), \cos(\theta)]$ 
 The MSE is computed as:
 
-$$ \mathrm{MSE} = \frac{1}{N} \sum_{i=1}^N \left( (\hat{y}_{{i,1}} - y_{{i,1}})^2 + (\hat{y}_{{i,2}} - y_{{i,2}})^2 \right) $$
+$$` \mathrm{MSE} = \frac{1}{N} \sum_{i=1}^N \left( (\hat{y}_{{i,1}} - y_{{i,1}})^2 + (\hat{y}_{{i,2}} - y_{{i,2}})^2 \right) `$$
 
 
 Where:
