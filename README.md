@@ -124,7 +124,9 @@ Given model predictions $\hat{y} = [\sin(\hat{\theta}), \cos(\hat{\theta})]$
 And true labels $y = [\sin(\theta), \cos(\theta)]$ 
 The MSE is computed as:
 
-$$` \mathrm{MSE} = \frac{1}{N} \sum_{i=1}^N \left( (\hat{y}_{{i,1}} - y_{{i,1}})^2 + (\hat{y}_{{i,2}} - y_{{i,2}})^2 \right) `$$
+```math
+\mathrm{MSE} = \frac{1}{N} \sum_{i=1}^N \left( (\hat{y}_{{i,1}} - y_{{i,1}})^2 + (\hat{y}_{{i,2}} - y_{{i,2}})^2 \right) 
+```
 
 
 Where:
@@ -139,13 +141,19 @@ Given predicted output $\hat{y} = [\sin(\hat{\theta}), \cos(\hat{\theta})]$
 and true labels $y = [\sin(\theta), \cos(\theta)]$:
 
 1. Convert sine/cosine vectors back to angles:
-$$ \hat{\theta} = \text{atan2}(\hat{y}_{\sin}, \hat{y}_{\cos}), \quad \theta = \text{atan2}(y_{\sin}, y_{\cos}) $$
+```math
+\hat{\theta} = \text{atan2}(\hat{y}_{\sin}, \hat{y}_{\cos}), \quad \theta = \text{atan2}(y_{\sin}, y_{\cos})
+```
 
 2. Compute the circular angle difference in $[-\pi, \pi]$:
-$$ \Delta \theta = \text{mod}(\hat{\theta} - \theta + \pi, 2\pi) - \pi $$
+```math
+\Delta \theta = \text{mod}(\hat{\theta} - \theta + \pi, 2\pi) - \pi
+```
 
 3. Convert radians to hours and compute the average:
-$$ \text{Circular MAE} = \frac{24}{2\pi} \cdot \frac{1}{N} \sum_{i=1}^N |\Delta \theta_i| $$
+```math
+\text{Circular MAE} = \frac{24}{2\pi} \cdot \frac{1}{N} \sum_{i=1}^N |\Delta \theta_i|
+```
 
 Explanation:
 - `atan2(sin, cos)` recovers the original angle in radians
